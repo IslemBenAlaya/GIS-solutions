@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NE&S GIS Solutions</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      margin: 0;
+      padding: 0;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .grid-item {
+      border: 1px solid #ccc;
+      padding: 20px;
+    }
+
+    .grid-item.qr-code {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .contact-info p {
+      margin: 5px 0;
+    }
+
+    .embed-container {
+      grid-column: 1 / span 2;
+      height: 500px; /* Adjust the height of the map container as needed */
+    }
+
+    /* Style for centering the h2 title */
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Contact</h2>
+  <div class="grid-container">
+    <div class="grid-item qr-code">
+      <img src="QR.png" alt="QR Code" width="200" height="200">
+    </div>
+    <div class="grid-item contact-info subpage-0">
+      <p>123 Slater Street, suite 903</p>
+      <p>Ottawa (Ontario) K1P 5H2</p>
+      <p>P: +1 613 798 3614</p>
+      <p>E: info@nesglobe.com</p>
+    </div>
+    <div class="grid-item embed-container">
+      <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" title="office location" src="//indibeda4d9014e8.maps.arcgis.com/apps/Embed/index.html?webmap=db7142b76c6a432faf0ed78124d37773&extent=-75.7172,45.4129,-75.677,45.4301&home=true&zoom=true&previewImage=false&scale=true&search=true&searchextent=true&basemap_gallery=true&disable_scroll=false&theme=light"></iframe>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>NE&S GIS Solutions</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+  <script src="authentication.js" defer></script>
+  <script src="script.js" defer></script>
+
+  <!-- Content Security Policy -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' authentication.js script.js; style-src 'self' 'unsafe-inline' styles.css https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css; img-src 'self' logo.png; connect-src 'self'; font-src 'self'; object-src 'none'; frame-src 'none'; media-src 'none'; worker-src 'none';">
+</head>
+<body>
+  <header class="fade-in header-container">
+    <div class="logo-container">
+      <a href="#" onclick="showSubpage('subpage0')">
+        <img src="logo.png" alt="Logo" class="logo">
+      </a>
+    </div>
+    <h1>NE&S GIS Solutions</h1>
+    <div class="user-avatar-container">
+      <!-- User Avatar -->
+      <div class="user-avatar"></div>
+      <!-- User Info -->
+      <div class="user-info" id="header-userinfo">
+        <span class="user-name" id="header-username"></span>
+        <button class="btn btn-danger" id="disconnect-btn" onclick="disconnect()">Disconnect</button>
+      </div>
+    </div>
+  </header>
+
+  <div id="login-container" class="showError">
+    <h2>Login</h2>
+    <form id="login-form">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username:</label>
+        <input type="text" class="form-control" id="username" required>
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password:</label>
+        <input type="password" class="form-control" id="password" required>
+      </div>
+      <div class="mb-3">
+        <button type="submit" class="btn btn-primary">Login</button>
+      </div>
+      <div id="login-error" class="fade-in"></div>
+    </form>
+  </div>
+
+  <main>
+    <div id="content-container" class="fade-in">
+      <ul class="navbar">
+        <li style="--index: 0;"><a href="#" onclick="showSubpage('subpage0')">Home</a></li>
+        <li style="--index: 1;"><a href="#" onclick="showSubpage('subpage1')">Spectrum Ownership GIS</a></li>
+        <li style="--index: 2;"><a href="#" onclick="showSubpage('subpage2')">Cellular Towers</a></li>
+        <li style="--index: 3;"><a href="#" onclick="showSubpage('subpage3')">Projects</a></li>
+      </ul>
+
+      <div>
+        <div id="subpage0" class="subpage fade-in slide-up"></div>
+        <div id="subpage1" class="subpage fade-in slide-up"></div>
+        <div id="subpage2" class="subpage fade-in slide-up"></div>
+        <div id="subpage3" class="subpage fade-in slide-up"></div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="fade-in">
+    <p>&copy; 2023 NE&S GIS Solutions. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,367 @@
+/* Reset some default styles to ensure consistency */
+body, h1, h2, h3, p, ul, li, button {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  font-family: Tahoma;
+  background-color: #f5f5f5;
+}
+
+/* Header Styles */
+header {
+  background-image: linear-gradient(to right, #e2eaff, #101443);
+  color: #ffffff;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+  transition: 0.3s ease;
+}
+
+.user-info {
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #101443;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+/* Show the user info on hover */
+.user-avatar-container:hover .user-info {
+  visibility: visible;
+  opacity: 1;
+}
+
+.user-avatar-container {
+  position: relative;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #101443;
+  margin-right: 10px;
+  background-image: url("avatar.png"); /* Example user avatar image */
+  background-size: cover;
+  background-position: center;
+}
+
+.user-name {
+  display: block;
+  font-size: 14px;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+#disconnect-btn {
+  background-color: #ff0000;
+  color: #ffffff;
+  padding: 4px 10px; /* Adjust the padding to make the button smaller */
+  border: none;
+  border-radius: 30px;
+  font-size: 12px; /* Adjust the font size to make the button text smaller */
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+#disconnect-btn:hover {
+  background-color: #510000;
+}
+
+/* Updated user-info layout to place the username and button on separate lines */
+#header-userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  max-width: 100px;
+  height: auto;
+}
+
+h1 {
+  font-size: 35px;
+  margin: 0;
+  color: #bdceff; /* Set a static color for the text */
+  -webkit-text-stroke: 2px #000000; /* For webkit-based browsers (Chrome, Safari) */
+  text-shadow: 5px 5px 10px #000000; /* Add a shadow effect */
+  padding: 10px; /* Add some padding to create a fill effect */
+  background: none;
+  background-clip: initial;
+  -webkit-background-clip: initial;
+  animation: none;
+}
+
+#login-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 350px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+}
+
+#login-container h2 {
+  text-align: center;
+  font-size: 24px;
+  color: #101443;
+  margin-bottom: 20px;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+}
+
+#login-form .mb-3 {
+  margin-bottom: 15px;
+}
+
+#login-form label {
+  font-size: 14px;
+  color: #101443;
+  font-weight: bold;
+}
+
+#login-form input[type="text"],
+#login-form input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1.5px solid #000000;
+  border-radius: 30px;
+  font-size: 14px;
+}
+
+#login-form button[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  background-color: #069b3d;
+  color: #ffffff;
+  border: none;
+  border-radius: 50px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#login-form button[type="submit"]:hover {
+  background-color: #015921;
+}
+
+#login-error {
+  display: none;
+  color: #ff0000;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Animation for error message */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add animation when error message is shown */
+#login-container.showError #login-error {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Tabs Bar Styles */
+.tabs-bar {
+  background-color: #101443;
+  padding: 10px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+/* Updated Navbar Style */
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.navbar li {
+  position: relative;
+  margin-right: 20px;
+  line-height: 40px;
+}
+
+.navbar li a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 0 20px;
+  border-radius: 35px;
+  background-color: #101443;
+  background-image: linear-gradient(to right, #5b8cff, #003d34);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 1);
+  transition: all 0.3s ease;
+  display: block;
+}
+
+/* Updated Ribbon Effect */
+.navbar li:before,
+.navbar li:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  z-index: -1;
+}
+
+.navbar li:before {
+  left: 0;
+  background: linear-gradient(135deg, #101443 0%, transparent 50%);
+  transition: width 0.3s ease;
+}
+
+.navbar li:after {
+  right: 0;
+  background: linear-gradient(45deg, #101443 0%, transparent 50%);
+  transition: width 0.3s ease;
+}
+
+.navbar li:hover:before,
+.navbar li:hover:after {
+  width: 100%;
+}
+
+/* Content Container Styles */
+#content-container {
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  margin-top: 20px;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+#content-container::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.4);
+  z-index: -1;
+  transition: background-color 0.3s ease;
+}
+
+#content-container:hover::before {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.subpage {
+  display: none;
+}
+
+.subpage h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.subpage.active {
+  opacity: 1;
+  display: block;
+  transform: translateX(0);
+  animation: slideIn 0.8s ease forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Styles for the body and main content container */
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #101443;
+  color: #ffffff;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Animating footer elements on hover */
+footer:hover h3,
+footer:hover p {
+  transform: translateY(-10px);
+  transition: transform 0.3s ease;
+}
+
+/* Add a glowing effect to the footer on hover */
+footer:hover {
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
+}
+
+/* Media Query for Responsive Tabs Bar and Header */
+@media screen and (max-width: 600px) {
+  header {
+    padding: 10px;
+  }
+
+  .navbar {
+    flex-direction: column;
+  }
+
+  .navbar li {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+
+  .logo {
+    max-width: 80px;
+  }
+}
